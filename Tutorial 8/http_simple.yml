@@ -1,0 +1,17 @@
+config:
+  target: "http://localhost:3000"
+  phases:
+    - duration: 60
+      arrivalRate: 5
+    - duration: 120
+      arrivalRate: 5
+      rampTo: 50
+    - duration: 600
+      arrivalRate: 50
+
+scenarios:
+  - name: "Express JS"
+    flow: # Flow is an array of operations that a user may perform
+      - get:
+          url: "/"
+      - think: 3
